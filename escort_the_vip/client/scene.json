@@ -1,0 +1,72 @@
+{
+  "ecs7": true,
+  "runtimeVersion": "7",
+  "display": {
+    "title": "EscortTheVIP",
+    "description": "Bodyguards vs Haters",
+    "favicon": "favicon_asset",
+    "navmapThumbnail": "assets/scene/Images/New_PB_ETV_The_game_horizontal.jpg"
+  },
+  "owner": "",
+  "contact": {
+    "name": "AMAIXEN",
+    "email": ""
+  },
+  "main": "bin/index.js",
+  "tags": [],
+  "scene": {
+    "base": "0,0",
+    "parcels": [
+      "0,0",
+      "1,0",
+      "0,1",
+      "1,1"
+    ]
+  },
+  "spawnPoints": [
+    {
+      "name": "SpawnArea1",
+      "default": true,
+      "position": {
+        "x": [
+          8,
+          16
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          4,
+          12
+        ]
+      },
+      "cameraTarget": {
+        "x": 16,
+        "y": 1,
+        "z": 20
+      }
+    }
+  ],
+  "requiredPermissions": [
+    "ALLOW_TO_TRIGGER_AVATAR_EMOTE",
+    "ALLOW_TO_MOVE_PLAYER_INSIDE_SCENE",
+    "USE_FETCH",
+    "USE_WEBSOCKET"
+  ],
+  "featureToggles": {
+    "voiceChat": "enabled",
+    "portableExperiences": "enabled",
+    "nearbyVoiceChat": "enabled"
+  },
+  "creator": "",
+  "skyboxConfig": {},
+  "source": {
+    "origin": "creator-hub",
+    "projectId": "72082213-2698-4942-afa2-003415e50b72"
+  },
+  "worldConfiguration": {
+    "name": "escortthevip.dcl.eth"
+  },
+  "rating": "T"
+}
