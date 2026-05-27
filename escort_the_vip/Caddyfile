@@ -1,0 +1,25 @@
+# Замініть YOUR-SUBDOMAIN на ваш піддомен з duckdns.org
+# Email використовується Let's Encrypt для повідомлень про сертифікати
+{
+	email your@gmail.com
+}
+
+YOUR-SUBDOMAIN.duckdns.org {
+	# Стиснення для HTTP-відповідей (WebSocket не стискається)
+	encode zstd gzip
+
+	# Реверс-проксі на Colyseus (порт 2567 за замовчуванням)
+	# Caddy v2 автоматично обробляє WebSocket upgrade,
+	# додаткова конфігурація не потрібна.
+	reverse_proxy 127.0.0.1:2567 {
+		# Передаємо реальний IP клієнта та схему
+		header_up X-Real-IP {remote_host}
+		header_up Host {host}
+	}
+
+	# Логи в stdout (видно у терміналі)
+	log {
+		output stdout
+		format console
+	}
+}

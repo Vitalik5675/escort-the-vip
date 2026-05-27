@@ -1,0 +1,108 @@
+{
+  "_comment": "Tunable server constants — hot-reloaded on file save. Structural values (GRID_COLS, wall types, state IDs) live in src/game/constants.ts because changing them at runtime breaks the schema. Changes apply: instant (read every tick — attack damage, item spawn weights), at next match (read once at startGame — GAME_DURATION_S, MAZE_OPTIONS, ITEM_INITIAL_COUNT), at next restart (vipConfig — Catalyst avatar is fetched once on startup).",
+
+  "GAME_DURATION_S": 300,
+  "COUNTDOWN_S": 30,
+  "END_LINGER_S": 10,
+  "MIN_PLAYERS_START": 1,
+  "MAX_PLAYERS": 10,
+  "VIP_ROOM_LOCK_S": 20,
+  "EMPTY_ARENA_MODE": false,
+
+  "PLAYER_MAX_HP": 100,
+  "VIP_MAX_HP": 200,
+  "ATTACK_DAMAGE_MIN": 15,
+  "ATTACK_DAMAGE_MAX": 25,
+  "ATTACK_COOLDOWN_MS": 1000,
+  "ATTACK_RESOLVE_DELAY_MS": 700,
+  "DEFENDING_DAMAGE_MULT": 0.5,
+  "BATON_BONUS_MIN": 8,
+  "BATON_BONUS_MAX": 15,
+  "BOMB_DAMAGE_MIN": 30,
+  "BOMB_DAMAGE_MAX": 55,
+  "BOMB_SELF_DAMAGE": 10,
+  "BOMB_FUSE_MS": 5000,
+
+  "SHIELD_MAX_HP_MIN": 50,
+  "SHIELD_MAX_HP_MAX": 150,
+  "SHIELD_HIT_BY_HAND": 5,
+  "SHIELD_HIT_BY_BATON": 25,
+  "SHIELD_HIT_BY_BOMB": 80,
+
+  "WALL_DMG_HAND_MIN": 10,
+  "WALL_DMG_HAND_MAX": 18,
+  "WALL_DMG_BATON_MIN": 22,
+  "WALL_DMG_BATON_MAX": 38,
+  "WALL_DMG_BOMB_MIN": 80,
+  "WALL_DMG_BOMB_MAX": 110,
+
+  "WALL_HP_RANGES": {
+    "hedge":    [70, 130],
+    "woodWall": [30, 70],
+    "woodDoor": [55, 105]
+  },
+
+  "ITEM_SPAWN_INTERVAL_MS": 12000,
+  "ITEM_MAX": 12,
+  "ITEM_INITIAL_COUNT": 6,
+  "BATON_MAX_TOTAL": 5,
+  "SHIELD_MAX_TOTAL": 5,
+  "ITEM_SPAWN_WEIGHTS": {
+    "bomb": 3,
+    "baton": 1,
+    "shield": 1
+  },
+
+  "NPC_MOVE_INTERVAL_MS": 900,
+  "VIP_BYPASS_TILES": 8,
+  "VIP_FLEE_TILES": 8,
+  "NPC_FOLLOW_RADIUS": 4,
+
+  "DISCONNECT_DEATH_MS": 60000,
+  "DISCONNECT_PURGE_MS": 120000,
+
+  "ENABLE_GAME_ZONE_FIRST_PERSON": true,
+  "ENABLE_ROOF_PHYSICS_COLLIDER": true,
+  "ALLOW_ALL_TILE_OVERLAP": false,
+
+  "_admin_comment": "Admin controls. FORCE_START_GAME / FORCE_END_GAME are edge-triggered on false→true — set back to false before triggering again. ADD_TIME_S is applied each time the value CHANGES to non-zero (only during 'playing' phase) — set to 0 between uses, or to a different number, to re-trigger. IMMORTALITY_MODE is live-applied: when on, players/VIP at HP<=0 teleport to a random arena tile with full HP instead of dying.",
+  "FORCE_START_GAME": false,
+  "FORCE_END_GAME": false,
+  "ADD_TIME_S": 300,
+  "IMMORTALITY_MODE": false,
+
+  "MAZE_OPTIONS": {
+    "windingness": 0.55,
+    "braidProb": 0.04,
+    "widenProb": 0.18,
+    "corridorDoorProb": 0.10,
+    "obstaclesMin": 22,
+    "obstaclesMax": 38,
+    "minBlockersPerLine": 2,
+    "routeCount": 1,
+    "branchCount": 0,
+    "materialBias": [
+      { "type": "CONCRETE",  "weight": 50 },
+      { "type": "HEDGE",     "weight": 35 },
+      { "type": "WOOD_WALL", "weight": 15 }
+    ],
+    "corridorObstacleBias": [
+      { "type": "WOOD_DOOR", "weight": 100 }
+    ]
+  },
+
+  "vipConfig": {
+    "_comment": "Applied ONCE at server startup — restart server to change wallet or mode.",
+    "mode": "player",
+    "playerWallet": "0xa1542522e644a6774d70ae5d732d7e1491f81cdd",
+    "overrides": {
+      "bodyShape": null,
+      "wearables": null,
+      "addWearables": [],
+      "removeWearables": [],
+      "skinColor": null,
+      "hairColor": null,
+      "eyeColor": null
+    }
+  }
+}
