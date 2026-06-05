@@ -8,7 +8,6 @@
 Сторонній:
 - `Caddyfile` + `caddy_windows_amd64.exe` — reverse proxy з Let's Encrypt SSL → `127.0.0.1:2567`
 - `CADDY_SETUP.md` — інструкція налаштування (DuckDNS, проброс портів, варіанти Caddyfile)
-- `server_old/` — попередня версія сервера (зберігається як reference; код переїхав у `server/`)
 
 ## Архітектура
 - Сервер **авторитарний** — всі ігрові рішення на сервері.

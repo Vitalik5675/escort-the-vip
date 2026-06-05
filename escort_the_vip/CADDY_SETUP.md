@@ -37,7 +37,10 @@ choco install caddy
 scoop install caddy
 ```
 
-Варіант 3 — вручну: завантажте `caddy.exe` з https://caddyserver.com/download і покладіть у `C:\Users\PC\Downloads\b\` або додайте в PATH.
+Варіант 3 — вручну: завантажте `caddy.exe` з https://caddyserver.com/download і покладіть у `C:\Users\PC\Downloads\escort_the_vip\` або додайте в PATH.
+```powershell
+.\caddy_windows_amd64.exe run --config Caddyfile
+```
 
 ### Linux
 
